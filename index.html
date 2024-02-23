@@ -6,12 +6,67 @@
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <link href="src/style.css" rel="stylesheet" type="text/css" />
     <meta name="viewport" content="width=H1, initial-scale=1.0" />
-    <title>AI Recipe Generator</title>
+    <title>Cook Smarter AI</title>
   </head>
+
   <body>
-    <h1>Welcome to AI Recipe Generator</h1>
+    <div class="container">
+      <h1>Welcome to Cook Smarter AI Recipe Generator</h1>
+      <select id="language-selector">
+        <option value="English">🇬🇧 English</option>
+        <option value="French">🇫🇷 French</option>
+        <option value="German">🇩🇪 German</option>
+        <option value="Italian">🇮🇹 Italian</option>
+        <option value="Japanese">🇯🇵 Japanese</option>
+        <option value="Polish">🇵🇱 Polish</option>
+        <option value="Portuguese">🇵🇹 Portuguese</option>
+        <option value="Spanish">🇪🇸 Spanish</option>
+      </select>
+      <div id="diet-type">
+        <h4>Please select your diet type</h4>
+        <input type="radio" id="asian" name="diet" value="Asian" />
+        <label for="asian">Asian</label><br />
+        <input type="radio" id="indian" name="diet" value="Indian" />
+        <label for="indian">Indian</label><br />
+        <input type="radio" id="keto" name="diet" value="Keto" />
+        <label for="keto">Keto</label><br />
+        <input
+          type="radio"
+          id="low-carbohydrate"
+          name="diet"
+          value="Low-carbohydrate"
+        />
+        <label for="low-carbohydrate">Low-carbohydrate</label><br />
+        <input
+          type="radio"
+          id="mediterranean"
+          name="diet"
+          value="Mediterranean"
+        />
+        <label for="mediterranean">Mediterranean</label><br />
+        <input type="radio" id="vegan" name="diet" value="Vegan" />
+        <label for="vegan">Vegan</label><br />
+        <br />
+        <button type="submit">Select</button>
+      </div>
+      <h4>
+        Please search for recipe providing list of ingredients or type of meal
+      </h4>
+      <form>
+        <input
+          type="text"
+          id="search"
+          placeholder="Search for a recipe"
+          required
+        />
+        <button type="submit" id="submit">Search</button>
+        <div class="example-text">
+          For example: Try searching for "chicken and brocoli for lunch"
+        </div>
+      </form>
+    </div>
     <p>
-      This project was coded by
+      This AI project was coded by
       <a href="https://github.com/irenagrocka-ad" target="_blank"
         >Irena Grocka</a
       >
