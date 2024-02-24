@@ -14,7 +14,14 @@ const translations = {
         },
         searchPlaceholder: "Enter ingredients and meal type",
         submitButton: "Create recipe",
-        selectButton: "Select"
+        selectButton: "Select",
+        servings: {
+            selectServings: "Please select amount of servings",
+            servings1: "1 serving",
+            servings2: "2 servings",
+            servings3: "3 servings",
+            servings4: "4 servings"
+        }
     },
     French: {
         welcome: "Bienvenue sur Cook Smarter AI Recipe Generator",
@@ -31,7 +38,14 @@ const translations = {
         },
         searchPlaceholder: "Entrez les ingrédients et le type de repas",
         submitButton: "Générer la recette",
-        selectButton: "Sélectionner"
+        selectButton: "Sélectionner",
+        servings: {
+            selectServings: "Veuillez sélectionner le nombre de portions",
+            servings1: "1 portion",
+            servings2: "2 portions",
+            servings3: "3 portions",
+            servings4: "4 portions"
+        }
     },
     German: {
         welcome: "Willkommen beim Cook Smarter AI Rezeptgenerator",
@@ -48,7 +62,14 @@ const translations = {
         },
         searchPlaceholder: "Geben Sie Zutaten und Mahlzeitentyp ein",
         submitButton: "Rezept erstellen",
-        selectButton: "Auswählen"
+        selectButton: "Auswählen",
+        servings: {
+            selectServings: "Bitte zurückgeben Sie die Anzahl der Portionen",
+            servings1: "1 Portion",
+            servings2: "2 Portionen",
+            servings3: "3 Portionen",
+            servings4: "4 Portionen"
+        }
     },
     Italian: {
         welcome: "Benvenuti nel generatore di ricette Cook Smarter AI",
@@ -63,9 +84,16 @@ const translations = {
             mediterranean: "Mediterraneo",
             vegan: "Vegano",
         },
-        searchPlaceholder: "Inserisci gli ingredienti e il tipo di pasto",
+        searchPlaceholder: "Si prega di selezionare la quantità di porzioni",
         submitButton: "Crea ricetta",
-        selectButton: "Seleziona"
+        selectButton: "Seleziona",
+        servings: {
+            selectServings: "Seleziona le tue porzioni",
+            servings1: "1 porzione",
+            servings2: "2 porzioni",
+            servings3: "3 porzioni",
+            servings4: "4 porzioni"
+        }
     },
     Polish: {
         welcome: "Witaj w Cook Smarter AI Generatorze Przepisów",
@@ -82,7 +110,14 @@ const translations = {
         },
         searchPlaceholder: "Wpisz składniki i rodzaj posiłku",
         submitButton: "Utwórz przepis",
-        selectButton: "Wybierz"
+        selectButton: "Wybierz",
+        servings: {
+            selectServings: "Proszę wybrać ilość porcji",
+            servings1: "1 porcja",
+            servings2: "2 porcje",
+            servings3: "3 porcje",
+            servings4: "4 porcje"
+        }
     },
     Portuguese: {
         welcome: "Bem-vindo ao Cook Smarter AI Recipe Generator",
@@ -99,7 +134,14 @@ const translations = {
         },
         searchPlaceholder: "Digite os ingredientes e o tipo de refeição",
         submitButton: "Criar receita",
-        selectButton: "Selecionar"
+        selectButton: "Selecionar",
+        servings: {
+            selectServings: "Por favor, selecione a quantidade de porções",
+            servings1: "1 porción",
+            servings2: "2 porciones",
+            servings3: "3 porciones",
+            servings4: "4 porciones"
+        }
     },
     Spanish: {
         welcome: "Bienvenido al generador de recetas de Cook Smarter AI",
@@ -116,7 +158,14 @@ const translations = {
         },
         searchPlaceholder: "Ingrese los ingredientes y el tipo de comida",
         submitButton: "Crear receta",
-        selectButton: "Seleccionar"
+        selectButton: "Seleccionar",
+        servings: {
+            selectServings: "Por favor seleccione la cantidad de porciones",
+            servings1: "1 porción",
+            servings2: "2 porciones",
+            servings3: "3 porciones",
+            servings4: "4 porciones"
+        }
     },
 };
 
@@ -130,7 +179,7 @@ function updateTranslations(selectedLanguage) {
     document.querySelector('#instructions').textContent = translatedStrings.createRecipe;
     document.querySelector('.example-text').textContent = translatedStrings.example;
 
-    //Update diet types as well
+    //Update diet types 
     const dietTypeLabels = document.querySelectorAll('#diet-type label');
     dietTypeLabels.forEach((label, index) => {
         const dietTypeKey = Object.keys(translatedStrings.dietTypes)[index];
@@ -140,6 +189,17 @@ function updateTranslations(selectedLanguage) {
     document.getElementById('search').setAttribute('placeholder', translatedStrings.searchPlaceholder);
     document.querySelector('#search-button').textContent = translatedStrings.submitButton;
     document.querySelector('#select-button').textContent = translatedStrings.selectButton;
+
+    // Update servings section
+    document.querySelector('#servings h4').textContent = translatedStrings.servings.selectServings;
+
+    // Update servings section
+    const servingsKeys = ['selectServings', 'servings1', 'servings2', 'servings3', 'servings4'];
+    const servingsLabels = document.querySelectorAll('#servings label');
+    servingsLabels.forEach((label, index) => {
+        label.textContent = translatedStrings.servings[servingsKeys[index + 1]];
+    });
+
 }
 
 // Event listener for language selector

@@ -8,7 +8,7 @@ function generateRecipe(event) {
         `create me recipe with ${ingredients} in ${language} for ${dietType} `;
     let key = "3doat099fbcfb24e74ea400f10f43b8a";
     let context =
-        "give me anger in format where list of ingredients (with quantity per 2 servings) is displayed as an list and cooking instructions as a paragraph. Both Ingredients and Instruction titles are in bold. Provide me macros at the end. Please format answer in html format.";
+        "give me a recipe in format where list of ingredients (with quantity per 2 servings) is displayed as an list and cooking instructions as a paragraph. Provide me macros at the end. Please format answer in html format.Ingredients, Instruction and Macros titles style to be underlined.";
 
     let url = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${key}`;
 
