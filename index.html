@@ -23,7 +23,6 @@
         <option value="French">🇫🇷 French</option>
         <option value="German">🇩🇪 German</option>
         <option value="Italian">🇮🇹 Italian</option>
-        <option value="Japanese">🇯🇵 Japanese</option>
         <option value="Polish">🇵🇱 Polish</option>
         <option value="Portuguese">🇵🇹 Portuguese</option>
         <option value="Spanish">🇪🇸 Spanish</option>
@@ -56,9 +55,9 @@
         <input type="radio" id="vegan" name="diet" value="Vegan" />
         <label for="vegan">Vegan</label><br />
         <br />
-        <button type="submit">Select</button>
+        <button id="select-button" type="submit">Select</button>
       </div>
-      <h4>
+      <h4 id="instructions">
         Enter your ingredients and select meal type and let the AI generate
         unique delicious recipe for you
       </h4>
@@ -69,7 +68,7 @@
           placeholder="Enter ingredients and meal type"
           required
         />
-        <button type="submit" id="submit">Create recipe</button>
+        <button type="submit" id="search-button">Create recipe</button>
         <div class="example-text">
           <strong>Example:</strong>Try searching for "chicken and brocoli for
           lunch"
@@ -98,6 +97,7 @@
         >
       </p>
     </footer>
-    <script src="index.js"></script>
+    <script src="src/scriptsTranslations.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
